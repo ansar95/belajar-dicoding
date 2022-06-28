@@ -1,0 +1,1 @@
+console.log('Halo, kita sedang buat server');
