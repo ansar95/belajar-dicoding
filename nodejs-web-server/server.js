@@ -4,12 +4,25 @@ const requestListener = (request, response) => {
 response.setHeader('Content-Type', 'text/html');
 response.statusCode = 200;
 
-  const {method} = request;
+  
 
-  if(method === 'GET'){
-    response.end('<h1>Hello GET</h1>')
+  const {method, url} = request;
+  
+  if (url === '/'){
+
+    //curl http://localhost:5000/
+  }else if (url === '/about'){
+
+
+  }else{
+    response.end ('<h1>Halaman Tidak Di Temukan</h1>');
   }
-
+    
+  /**
+  //ini body request
+    if(method === 'GET'){
+      response.end('<h1>Hello GET</h1>')
+  }
   if(method === 'POST'){
     let body = [];
     
@@ -23,7 +36,8 @@ response.statusCode = 200;
       response.end(`<h1>Hallo, ${name}! </h1>`);
     });  
   }
-
+   */
+  
   if(method === 'PUT'){
     response.end('<h1>Hello PUT</h1>')
   }
