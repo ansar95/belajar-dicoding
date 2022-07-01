@@ -26,10 +26,18 @@ handler: (Request, h) => {
 {
   method: '*',
   path: '/about',
-  handler: (Request, h) => {
+  handler: (request, h) => {
     return 'Halaman ini tidak bisa diakses dengan method';
     },
   },
+{
+method: 'GET',
+path: '/hello/{name?}',
+handler: (request, h) => {
+  const { name = "strange"} = request.params;
+  return `Hello, ${name}`;
+},
+},
 {
   method: '*',
   path: '/{any*}',
